@@ -1,0 +1,83 @@
+.content{
+    padding: 4rem;
+   
+}
+.mm{
+   border-radius: 1rem;
+    height:18rem;
+  padding: 1rem;
+   margin: 2rem;
+   margin-left: 7rem;
+}
+.mm:hover{
+    opacity: 100%;
+}
+.link1{
+    background-color: #d0f7d9;
+    opacity: 90%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.link2{
+    background-color:#d0e3f7;
+    opacity: 90%;
+   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.link3{
+    background-color: #d0c2f2;
+    opacity: 90%;
+   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.link4{
+    background-color: #f7d0d1;
+    opacity: 90%;
+   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.link5{
+    background-color: #f7f7d0;
+    opacity: 90%;
+   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.link6{
+    background-color:#e9d0f7 ;
+    opacity: 90%;
+   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.link7{
+    background-color:#c5f8f4 ;
+    opacity: 90%;
+   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.link8{
+    background-color:#d0f7e2 ;
+    opacity: 90%;
+   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.text{
+    margin-top: 2rem;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: bolder;
+   
+    color: black;
+}
+.text-1{
+    font-size: 3rem;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 3rem;
+
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .content{
+        padding: 3rem;
+    }
+   .mm{
+       margin-left: 1rem;
+       margin-top: 1rem;
+       margin-bottom: 3rem;
+   }
+  
+ 
+  }

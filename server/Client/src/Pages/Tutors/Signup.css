@@ -1,0 +1,51 @@
+
+.thumbnail {
+  padding: 0 0 15px 0;
+  border: none;
+  border-radius: 0;
+}
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 10px;
+}
+.regsiteration-form{
+    border-radius: 3rem;
+  margin-top: 3rem;
+    padding:2.5rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.material-icons-name{
+    font-size:large;
+   
+}
+.link{
+    font-size: large;
+    text-decoration: underline;
+    font-family: 'Roboto Slab', serif;
+    font-weight: bold;
+    color: black;
+}
+.center{
+    text-align: center;
+    font-family: 'Roboto Slab', serif;
+}
+.one{
+    margin-top: 3rem;
+}
+p{
+  font-family: 'Roboto Slab', serif;
+}
+
+.form-group{
+ 
+  margin-top: 4rem;
+}
+
+.frm1{
+  height: 30px;
+ font-size: 2rem;
+  font-family: 'Roboto Slab', serif;
+  padding: 2rem;
+}

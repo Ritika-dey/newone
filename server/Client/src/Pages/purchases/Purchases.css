@@ -1,0 +1,58 @@
+.purchases__header{
+    padding: 0;
+    height: 100px;
+    object-fit: contain;
+    background: linear-gradient(60deg,white, #5b6b96, white )
+}
+
+.purchases__header__pill{
+    border-radius: 20px;
+    margin-left: 20px;
+}
+
+.purchases__contain{
+    padding: 10px;
+}
+.purchases{
+  
+    padding: 2rem;
+    border-radius:12px ;
+    margin-top:1rem ;
+}
+.purchase{
+    
+    border-radius: 1rem;
+}
+.p_item{
+     
+    height: 70px;
+    padding: 1rem;
+}
+
+.data_cont{
+   
+  padding: 1.3rem;
+}
+.purchase{
+    background-color: rgb(228, 230, 236);
+ 
+}
+.dt{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.3em;
+    
+}
+.line{
+    border: 0.5px solid rgb(119, 149, 248);
+}
+.data_cont1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+    padding: 1.3rem;
+  }
+  .invoice{
+      margin-top: 5.5rem;
+  }

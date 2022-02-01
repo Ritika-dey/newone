@@ -1,0 +1,138 @@
+.profile__container{
+  background-color: rgb(247, 247, 247);
+  margin-top: 30px;
+  padding: 10px;
+ 
+  box-shadow: 4px 4px 4px grey;
+}
+.profile__image{
+  height: 40%;
+  margin: 20px;
+}
+.profile__image img{
+  width: 200px;
+  height: 200px;
+  border: 5px solid #153280;
+}
+.profile__shortcut__btn .badge{
+  position: absolute;
+  top: -6px;
+  right: 100px;
+  /* padding: 5px 5px; */
+  border-radius: 50%;
+  background: red;
+  color: white;
+ }
+
+
+
+/* user basics style */
+.user__basics__container{ 
+  padding: 10px;
+}
+.user__basics__title,  .user__details h4{
+  color: #153280;
+  font-weight: bold;
+}
+.user__details{
+  margin: 15px 0 15px 0;
+}
+
+
+/* user education style */
+.user__edu__container{
+  padding: 10px;
+}
+.user__edu__title{
+ color: #153280;
+ font-weight: bold;
+}
+
+
+/* user ans style */
+.user__ans__container{
+ padding: 10px;
+}
+.user__ans__title{
+color: #153280;
+font-weight: bold;
+}
+.user__ans__details{
+ height: 55vh;
+ overflow-y: scroll;
+}
+.user__answer{
+ background-color: white;
+ margin: 10px 0 10px 0;
+ padding: 5px 5px 5px 10px;
+}  
+
+
+/* user ques style */
+.user__ques__container{
+ padding: 10px;
+}
+.user__ques__title{
+color: #153280;
+font-weight: bold;
+}
+.user__ques__details{
+ height: 55vh;
+ overflow-y: scroll;
+}
+.user__question{
+ background-color: white;
+ margin: 10px 0 10px 0;
+ padding: 5px 5px 5px 10px;
+}  
+
+
+/* scrollbar style */
+::-webkit-scrollbar {
+ width: 10px;
+} 
+::-webkit-scrollbar-track {
+ box-shadow: inset 0 0 5px grey; 
+ border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+ background:#153280; 
+ border-radius: 10px;
+} 
+::-webkit-scrollbar-thumb:hover {
+ background: #102561; 
+}
+.profile__shortcut__buttons{
+ float: right;
+}
+.profile__shortcut__btn{
+ float: right;
+ border-radius: 50%;
+ margin: 2px;
+ background-color: #153280;
+ 
+}
+
+/* modal style */
+
+.ReactModal__Overlay {
+ opacity: 0;
+ transition: opacity 200ms ease-in;
+}
+
+.ReactModal__Overlay--after-open{
+ opacity: 1;
+}
+
+.ReactModal__Overlay--before-close{
+ opacity: 0;
+}
+
+.profile__edit{
+ padding: 10px;
+ background-color: #153280;
+ color: white;
+}
+.profile__edit form .form-group{
+ margin-top: 15px;
+}

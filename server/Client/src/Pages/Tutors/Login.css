@@ -1,0 +1,52 @@
+
+.dv{
+   
+    height: 600px;
+     
+      margin: auto;
+      
+      justify-content: center;
+      display: flex;
+      align-items: center;
+  }
+  .form{
+      border-radius: 3rem;
+      background-color: white;
+      width: 80%;
+      padding:3rem;
+  }
+  .title{
+      text-align: center;
+      font-family: 'Times New Roman', Times, serif;
+      font-style: italic;
+      font-weight: 900;
+      color: rgb(70, 68, 68);
+      text-decoration:underline;
+  }
+  .btns{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      
+  }
+  .lg_bt{
+      margin: 1rem;
+      font-size: 1.3em;
+     
+      color: white;
+      font-family: 'Times New Roman', Times, serif;
+      
+      padding: 1rem;
+  }
+  .sign{
+   
+      margin: 1.5rem;
+  }
+  .signin{
+      margin-top:1rem
+  }
+  .img{
+      margin-top: 6rem;
+     
+  }

@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+.discussion_tips{
+    background-color: #153280;
+    border-radius: 10px ;
+    padding: 5px;
+}
+.discussion_tips h3{
+   color: yellow;
+}  
+.discussion__que{
+    padding: 10px;
+    background-color: white;
+    box-shadow: 4px 4px 8px rgb(208, 209, 209);
+    margin: 10px;
+}
+.discussion__que__title{
+    font-weight: bold;
+    color: #153280;
+    font-family: 'Acme', sans-serif;
+}
+.discussion__que__meta, .discussion__que__upper{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around; 
+}
+.discussion__feed__new, .discussion__add__ans{
+    border: 1px solid black;
+    padding: 20px;
+    border-radius: 5px;
+}
+.discussion__feed__new__header, .discussion__add__ans__header{
+    display: flex; 
+    justify-content: flex-start; 
+    margin-bottom: 20px;
+}
+.discussion__feed__new__header img, .discussion__add__ans__header img{
+   width: 50px;
+   height: auto;
+}
+.discussion__feed__new__attachments, .discussion__add__ans__attachments{
+   margin-top: 10px;
+   display: flex;
+   justify-content: space-between;
+}

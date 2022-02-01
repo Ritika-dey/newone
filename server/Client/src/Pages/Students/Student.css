@@ -1,0 +1,30 @@
+
+.left{
+    
+    padding: 2rem;
+
+}
+.side{
+    width:100%;
+  
+    padding: 2rem;
+    margin-top: 1rem;
+}
+.sidebtn{
+    width: 80%;
+    margin-left:3rem;
+    padding: 1rem;
+}
+@media screen and (max-width: 600px) {
+    .side{
+       
+       
+        width:100%;
+       padding: 1rem;
+    }
+    .sidebtn{
+        margin-left: 0rem;
+        width:100%;
+       padding: 1rem;
+    }
+  }

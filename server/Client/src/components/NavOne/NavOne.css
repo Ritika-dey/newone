@@ -1,0 +1,15 @@
+.navbar {
+  margin-bottom: 0px;
+  border-radius: 0;
+  font-weight: bold;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: white;
+  padding: 5px;
+}
+
+ul > li:before {
+  content: none !important;
+}
+ 

@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');
+.cont{
+    padding: 2rem;
+    
+}
+.links{
+    padding: 2rem;
+}
+.list-group-item{
+    text-align: justify;
+    font-family: 'Roboto Slab', serif;
+    font-weight: bold;
+}
+.queheading{
+    font-family: 'Roboto Slab', serif;
+    font-weight: bold;
+    font-size: 2.5rem;
+   
+   
+   
+    border-radius:1rem ;
+    margin-left: 1rem;
+}
+.image{
+    display: flex;
+  justify-content: center;
+   height:40rem;
+   
+    width: 100%;
+   
+}
+.images{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    padding-left:2rem;
+    padding-right:2rem;
+
+    height:100%;
+   width:100%;
+ border-radius: 2rem;
+   
+}
+.answer{
+    font-size: 2rem;
+    font-family: 'Roboto Slab', serif;
+    text-align: justify;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+.con{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}

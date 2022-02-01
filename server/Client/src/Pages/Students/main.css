@@ -1,0 +1,28 @@
+
+.lf{
+   
+    margin: 2rem;
+   border-radius: 2rem;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+.rh{
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    margin: 2rem;
+   padding: 1rem;
+    border-radius: 2rem;
+}
+.main2{
+    
+    padding: 1rem;
+}
+.m{
+    padding: 1rem;
+}
+.edt{
+    margin-right: 5rem;
+   float: right;
+}
+.top{
+    margin-top: 1rem;
+    padding: 3rem;
+}
