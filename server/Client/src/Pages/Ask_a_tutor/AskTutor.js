@@ -16,10 +16,8 @@ export default function AskTutor() {
     const searchRecords = () => {
         axios.get(`/searchanswer/${search}`)
             .then(response => {
-
                 setData(response.data);
             });
-
     }
     // file
     const onChangeFile = (e) => {

@@ -128,7 +128,7 @@ function Reviews() {
               <label className="control-label col-sm-2" for="email">Course Or Services: </label>
               <div className="col-sm-10">
 
-                <select class="form-control" id="sel1" value={course}
+                <select className="form-control" id="sel1" value={course}
                   className="form-control"
                   onChange={(e) => setcourse(e.target.value)} >
                   <option>Select Appropriate Option</option>

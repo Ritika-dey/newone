@@ -131,7 +131,7 @@
 
 .home__Contact__info{
   background-color: #153280;
-  min-height: 500px; 
+  min-height: 400px; 
   color: white;
   padding-top: 3%;
 }
@@ -149,7 +149,7 @@
 .home__useful__link{ 
   background-color: rgb(235 235 235 / 49%);
   min-height: 400px;
-  padding: 3%;
+  /* padding: 3%; */
   color: #153280;
 }
 

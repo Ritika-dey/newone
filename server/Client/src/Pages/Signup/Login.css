@@ -1,15 +1,12 @@
 
-.dv{
-   
-  height: 600px;
-   
-    margin: auto;
-    
+.dv{ 
+    height: 600px; 
+    margin: auto; 
     justify-content: center;
     display: flex;
     align-items: center;
 }
-.form{
+.dv form{
     border-radius: 3rem;
     background-color: white;
     width: 80%;
@@ -32,15 +29,13 @@
 }
 .lg_bt{
     margin: 1rem;
-    font-size: 1.3em;
-   
+    font-size: 1.3em; 
     color: white;
-    font-family: 'Times New Roman', Times, serif;
-    
+    font-family: 'Times New Roman', Times, serif; 
     padding: 1rem;
 }
-.sign{
- 
+
+.sign{ 
     margin: 1.5rem;
 }
 .signin{
@@ -48,4 +43,10 @@
 }
 .img{
     margin-top: 6rem;
+}
+
+@media(max-width:650px){
+    .dv form{
+        width: 100%;
+    }
 }

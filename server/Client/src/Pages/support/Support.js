@@ -64,7 +64,7 @@ function Support() {
                 <div className="support__form col-sm-3 col-md-offset-1">
                     <h1 className="support__form__title">Write your query here</h1>
                     <form onSubmit={changeOnClick} encType="multipart/form-data" >
-                        <div class="form-group">
+                        <div className="form-group">
                             <label for="email">Email:</label>
                             <input
                                 type="email"
@@ -73,7 +73,7 @@ function Support() {
                                 id="email"
                                 placeholder="Enter your email here" />
                         </div>
-                        <div class="form-group">
+                        <div className="form-group">
                             <label for="query">Your Query:</label>
                             <textarea
                                 className="form-control"

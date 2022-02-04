@@ -47,7 +47,7 @@ function UserAns() {
                                     <div className="row">
                         <Link to={"/viewanswer/" + i._id} className="btn btn-default user__read__more__btn">View</Link>
                        
-                        <Link to= {"/edit1/" +  i._id}><button type="button" class="btn btn-default user__read__more__btn">Edit Answer</button></Link>
+                        <Link to= {"/edit1/" +  i._id}><button type="button" className="btn btn-default user__read__more__btn">Edit Answer</button></Link>
                         <button onClick={()=>deletenote(i._id)} type="button" className="btn btn-default user__read__more__btn">Delete Answer</button>
                         </div>
                                 </div>

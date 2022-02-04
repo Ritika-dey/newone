@@ -23,8 +23,8 @@ export default function User() {
         <>
             <div className="user ">
                 <h2>Customer Details</h2>
-                <div className="user__table ">
-                    <table className="table table-striped table-responsive">
+                <div className="user__table table-responsive">
+                    <table className="table table-striped">
                         <thead>
                             <tr>
                                 <th>ID</th>

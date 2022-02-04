@@ -5,7 +5,7 @@ import { useHistory } from 'react-router-dom';
 
 function SessionList() {
     const [Data, setData] = useState([]);
-    const [item , setitem]=useState([])
+    const [item, setitem] = useState([])
     const history = useHistory()
     const [sdkReady, setSdkReady] = useState(false)
     const [pay, setpay] = useState({})
@@ -37,7 +37,7 @@ function SessionList() {
 
         };
         async function getData1() {
-            const res1 = await fetch("/getass");
+            const res1 = await fetch("/getsessions");
             const data1 = await res1.json();
 
             // store the data into our Data variable
@@ -66,59 +66,59 @@ function SessionList() {
         }
     }, []);
     // logic end
-    const deleted=async(_id)=>{
-        await axios.delete(`/deletes/${_id}`).then(res=>window.alert(res.data))
+    const deleted = async (_id) => {
+        await axios.delete(`/deletes/${_id}`).then(res => window.alert(res.data))
     }
     return (
         <>
-            <h3 style={{ color: "grey" }}><b>CART ITEMS <i className='fa fa-shopping-cart'></i> {item ?<>{item && item.length}</>:<>0</>}</b></h3>
-
-            <table className="table table-responsive">
+            <h3 style={{ color: "grey" }}><b>CART ITEMS <i className='fa fa-shopping-cart'></i> {item ? <>{item && item.length}</> : <>0</>}</b></h3>
+            <div className='table-responsive'>
+            <table className="table">
                 <tbody>
                     {
                         Data.length == 0 ?
                             <div className='cart__empty' align="center">
                                 <h3 style={{ color: "darkgray" }}><b>NOTHING IN CART</b></h3>
-                                <img src="https://image.freepik.com/free-vector/no-data-concept-illustration_114360-2506.jpg" />
+                                <img className='img-responsive' src="https://image.freepik.com/free-vector/no-data-concept-illustration_114360-2506.jpg" />
                             </div>
                             :
                             Data.map((i, index) =>
                                 <>
                                     <tr key={index}>
-                                         {i.payment==="Completed"?<></>:<>
-                                        <td>{i.image}</td>
-                                        <td>
-                                            <div><span style={{ color: "grey" }}>Topic: </span>{i.title}</div>
-                                            <div><span style={{ color: "grey" }}>Deadline: </span>{i.deadline}</div>
-                                            <div><span style={{ color: "grey" }}>Requested On: </span>{i.date}</div>
-                                            <div><span style={{ color: "grey" }}>Amount: </span><i className="fa fa-rupee"></i>{i.price}</div><br/>
-                                            {i.payment==="Completed"?<>{i.status==="Completed"?<><p className='btn btn-success'>Pay Now</p></>:<></>}</>:<></>}
-                                            <br />
-                                            
-                                           
-                                            {i.status=="Pending" ?<> <button className='btn btn-danger' onClick={()=>deleted(`${i._id}`)}>Remove from Cart</button></>:<></>}
-                                        </td>
-                                        {i.payment == "Completed" ?
-                                            <>{i.payment}</> :
-                                            <><td>{i.status == "Completed" ?
-                                                <>{pay.status ? <><h3 className='text-primary' onClick={() => check(`${i._id}`)}>Confirm Payment</h3></> :
-                                                    <></>} </> :
-                                                <>Payment Pending</>}
-                                            </td>
-                                                <td>{i.status == "Pending" ?
-                                                    <> <button className='btn btn-danger'>Waiting For Approval</button></> :
-                                                    <>
-                                                        {sdkReady ? <h1>Loading</h1> : <>
-                                                            
-                                                            <PayPalButton amount={i.price}
-                                                                onSuccess={successPaymentHandler} />
+                                        {i.payment === "Completed" ? <></> : <>
+                                            <td>{i.image}</td>
+                                            <td>
+                                                <div><span style={{ color: "grey" }}>Topic: </span>{i.title}</div>
+                                                <div><span style={{ color: "grey" }}>Deadline: </span>{i.deadline}</div>
+                                                <div><span style={{ color: "grey" }}>Requested On: </span>{i.date}</div>
+                                                <div><span style={{ color: "grey" }}>Amount: </span><i className="fa fa-rupee"></i>{i.price}</div><br />
+                                                {i.payment === "Completed" ? <>{i.status === "Completed" ? <><p className='btn btn-success'>Pay Now</p></> : <></>}</> : <></>}
+                                                <br />
 
-                                                        </>}
-                                                    </>}</td>
-                                            </>
-                                        }
-                                   
-                                   </>}
+
+                                                {i.status == "Pending" ? <> <button className='btn btn-danger' onClick={() => deleted(`${i._id}`)}>Remove from Cart</button></> : <></>}
+                                            </td>
+                                            {i.payment == "Completed" ?
+                                                <>{i.payment}</> :
+                                                <><td>{i.status == "Completed" ?
+                                                    <>{pay.status ? <><h3 className='text-primary' onClick={() => check(`${i._id}`)}>Confirm Payment</h3></> :
+                                                        <></>} </> :
+                                                    <>Payment Pending</>}
+                                                </td>
+                                                    <td>{i.status == "Pending" ?
+                                                        <> <button className='btn btn-danger'>Waiting For Approval</button></> :
+                                                        <>
+                                                            {sdkReady ? <h1>Loading</h1> : <>
+
+                                                                <PayPalButton amount={i.price}
+                                                                    onSuccess={successPaymentHandler} />
+
+                                                            </>}
+                                                        </>}</td>
+                                                </>
+                                            }
+
+                                        </>}
                                     </tr>
 
                                 </>
@@ -126,6 +126,7 @@ function SessionList() {
                     }
                 </tbody>
             </table>
+            </div>
         </>
     )
 }

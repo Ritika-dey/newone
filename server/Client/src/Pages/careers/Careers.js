@@ -62,9 +62,9 @@ function Careers() {
                                             <h3 className="job__role">{i.name}</h3>
                                             <p className="job__Desc">{i.body}</p>
                                             <div className="job__details">
-                                                <p className="job__type"><i class="fa fa-tasks" aria-hidden="true"></i> &nbsp;{i.type}</p>
-                                                <p className="job__location"><i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp;{i.location}</p>
-                                                <p className="job__experience"><i class="fa fa-briefcase" aria-hidden="true"></i> Exp: &nbsp;{i.experience}</p>
+                                                <p className="job__type"><i className="fa fa-tasks" aria-hidden="true"></i> &nbsp;{i.type}</p>
+                                                <p className="job__location"><i className="fa fa-map-marker" aria-hidden="true"></i> &nbsp;{i.location}</p>
+                                                <p className="job__experience"><i className="fa fa-briefcase" aria-hidden="true"></i> Exp: &nbsp;{i.experience}</p>
                                             </div>
                                         </div>
                                     </div>

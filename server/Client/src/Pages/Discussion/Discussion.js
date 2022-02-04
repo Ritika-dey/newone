@@ -161,7 +161,8 @@ export default function Discussion() {
                                                         className="img-responsive img-rounded"
                                                         src={`/uploads/${i.articleImage}`}
                                                         placeholder="ques banner">
-                                                    </img>
+                                                    </img> 
+
                                                     <div className="discussion__que__meta">
                                                         <div className="discussion__que__anscnt text-primary"><i className="fa fa-edit " ></i> <Link to="/answers">&nbsp;Read Answer</Link></div>
 

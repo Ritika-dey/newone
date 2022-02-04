@@ -83,10 +83,10 @@ export default function Viewblog(props) {
                     <div className="blog__single__body">
                         <div className="col-xs-2 blog__single__sidebar">
                             <div className="blog__single__likes">
-                                <p><i class="fa fa-heart" aria-hidden="true" onClick={() => { likePost(data._id) }}></i> {data && data.likes.length}</p>
+                                <p><i className="fa fa-heart" aria-hidden="true" onClick={() => { likePost(data._id) }}></i> {data && data.likes.length}</p>
                             </div>
                             <div className="blog__single__comments">
-                                <p><i class="fa fa-comment" aria-hidden="true"></i> {data && data.comments.length}</p>
+                                <p><i className="fa fa-comment" aria-hidden="true"></i> {data && data.comments.length}</p>
                             </div>
                         </div>
                         <div className="col-xs-10 blog__single__main">

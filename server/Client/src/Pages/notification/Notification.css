@@ -28,3 +28,9 @@
 .notifications__list{
     border: 1px solid black;
 }
+
+@media(max-width:650px){
+    .notification{
+        height: 100px;
+    }
+}

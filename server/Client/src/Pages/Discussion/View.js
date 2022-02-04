@@ -115,19 +115,12 @@ export const View = (props) => {
 
 
       </div>
-
-
-
-
-
-
-  
+ 
       <div className="discussion_feed  col-sm-8">
                     {/* complete div|||| */}
                     <div className="discussion__feed__new container-fluid">
                         {/* add question field */}
-                        <div className="discussion__feed__new__header">
-
+                        <div className="discussion__feed__new__header"> 
                             <image src="https://www.bing.com/th?id=OIP.gxn_fMRYjgGPp7I9lh81FgHaGS&w=153&h=133&c=8&rs=1&qlt=90&o=6&dpr=1.25&pid=3.1&rm=2"
                                 className="img-circle img-responsive" placeholder="ques banner"
                                 alt="profile image" ></image>

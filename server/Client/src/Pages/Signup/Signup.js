@@ -56,15 +56,12 @@ export default function Signup() {
     <div>
       <div className=' signup'>
         <div className='row'>
-          <div className='col-sm-5 left '>
-
-            <img src={logo} width="100%" className='img img-responsive' />
-
-
+          <div className='col-sm-5 left '> 
+            <img src={logo} width="100%" className='img img-responsive' /> 
           </div>
-          <div className='col-sm-7 right'>
 
-            <form className='form '>
+          <div className='col-sm-7 right'>
+            <form>
               <h2 className='title'>Get Started Here </h2>
               <label for="fname"> Name</label>
               <input type="text" value={name}

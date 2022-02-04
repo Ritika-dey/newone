@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import './Admin.css'
-import axios from 'axios';
-import { Link } from 'react-router-dom'
+import axios from 'axios'; 
+
 function ReqSessions() {
     const [Data, setData] = useState(null);
     // costructor
@@ -9,11 +9,11 @@ function ReqSessions() {
     const [tutor, settutor] = useState("");
     const [meetinglink, setmeetinglink] = useState("")
     const [currentItemId, setcurrentItemId] = useState(null);
-    const [curency , setcurency]=useState("")
+    const [curency, setcurency] = useState("")
     const addsession = (currentItemId) => {
 
         const articles = {
-            price, tutor, meetinglink , curency
+            price, tutor, meetinglink, curency
         }
         setprice("");
         setmeetinglink("");
@@ -66,8 +66,8 @@ function ReqSessions() {
         <>
             <div className="req__session ">
                 <h2>Requested Live Sessions</h2>
-                <div className="req__session__table ">
-                    <table className="table table-striped table-responsive">
+                <div className="req__session__table table-responsive">
+                    <table className="table table-striped">
                         <thead>
                             <tr>
 
@@ -79,7 +79,7 @@ function ReqSessions() {
                                 <th>File</th>
 
                                 <th>Status</th>
-                                
+
                                 <th>Payment</th>
                             </tr>
                         </thead>
@@ -102,8 +102,8 @@ function ReqSessions() {
                                             <td>{i.date}</td>
                                             <td><a href={`Session/${i.image}`}>{i.image}</a></td>
 
-                                            
-                                            <td>{i.payment==="Pending"?<><button className='btn btn-primary' data-toggle="modal" data-target="#Statusmodal" onClick={() => setcurrentItemId(`${i._id}`)}>{i.status} <i className="fa fa-edit"></i></button></>:<><button className='btn btn-primary' data-toggle="modal" data-target="#Statusmodal" disabled onClick={() => setcurrentItemId(`${i._id}`)}>{i.status} <i className="fa fa-edit"></i></button></>}</td>
+
+                                            <td>{i.payment === "Pending" ? <><button className='btn btn-primary' data-toggle="modal" data-target="#Statusmodal" onClick={() => setcurrentItemId(`${i._id}`)}>{i.status} <i className="fa fa-edit"></i></button></> : <><button className='btn btn-primary' data-toggle="modal" data-target="#Statusmodal" disabled onClick={() => setcurrentItemId(`${i._id}`)}>{i.status} <i className="fa fa-edit"></i></button></>}</td>
 
                                             <td>{i.payment}</td>
                                             <td><button className='btn btn-primary' data-toggle="modal" data-target="#solutionModal" onClick={() => setcurrentItemId(`${i._id}`)}>Add Session Details</button></td>
@@ -132,16 +132,16 @@ function ReqSessions() {
                                                                         required />
                                                                 </div>
                                                                 <div className="form-group">
-                                        <label htmlFor="remarks">Add Currency</label>
-                                        <select className="form-control" id="sel1"  value={curency}
-                                            onChange={(e) => setcurency(e.target.value)}>
- 
-    <option>Select</option>
-    <option>$</option>
-    <option>₹</option>
-  </select>
+                                                                    <label htmlFor="remarks">Add Currency</label>
+                                                                    <select className="form-control" id="sel1" value={curency}
+                                                                        onChange={(e) => setcurency(e.target.value)}>
 
-                                    </div>
+                                                                        <option>Select</option>
+                                                                        <option>$</option>
+                                                                        <option>₹</option>
+                                                                    </select>
+
+                                                                </div>
                                                                 <div className="form-group">
                                                                     <label htmlFor="name">Tutor Name:</label>
                                                                     <input

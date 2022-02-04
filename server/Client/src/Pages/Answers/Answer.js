@@ -145,11 +145,7 @@ export default function Answer() {
                             <div className="discussion__content container-fluid">
                                 <div className="discussion__feed__new container-fluid">
                                     {/* add question field */}
-                                    <div className="discussion__feed__new__header">
-                                        {/* 
-                            <img src="https://www.bing.com/th?id=OIP.gxn_fMRYjgGPp7I9lh81FgHaGS&w=153&h=133&c=8&rs=1&qlt=90&o=6&dpr=1.25&pid=3.1&rm=2"
-                                className="img-circle img-responsive" placeholder="ques banner"
-                                alt="profile image" /> */}
+                                    <div className="discussion__feed__new__header"> 
                                         <h4>&nbsp;<strong>Search Answers Here</strong>&nbsp;&nbsp;</h4>
                                     </div>
                                     <div className="discussion__feed__new__form">
@@ -163,7 +159,7 @@ export default function Answer() {
                                     </div>
                                 </div>
                                 <div className="row">
-                                    <h3 className="text-primary">Top questions answers for you &nbsp;&nbsp; <Link to="/ask"><button type="button" class="btn btn-primary qu">Ask Question</button></Link></h3>
+                                    <h3 className="text-primary">Top questions answers for you &nbsp;&nbsp; <Link to="/ask"><button type="button" className="btn btn-primary qu">Ask Question</button></Link></h3>
 
                                 </div>
                                 {/* question field starts here */}
@@ -183,13 +179,10 @@ export default function Answer() {
 
 
                                                     <h4 className="discussion__que__title">Answer:-{i.answer.slice(0, 105)}...<Link to={"/viewanswer/" + i._id}>Read More</Link></h4>
-                                                    <div className="discussion__que__meta">
-
-                                                        
+                                                    <div className="discussion__que__meta"> 
                                                         <div className="discussion__que__anscnt text-primary"><i className="fa fa-tag" aria-hidden="true"></i> {i.subject}</div>
                                                         <div className="discussion__que__likes text-success">{i && i.likes.length} <i className="fa fa-thumbs-up" onClick={() => { likePost(i._id) }}></i> </div>
                                                         <div className="discussion__que__dislikes text-danger"><i className="fa fa-thumbs-down" onClick={() => { unlikePost(i._id) }}></i></div>
- 
                                                     </div>
                                                     <img
                                                         className="img-responsive img-rounded"

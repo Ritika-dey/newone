@@ -37,13 +37,15 @@ const Login = () => {
   }
   return (
     <div>
-      <div className='container-fluid main '>
+      <div className='container-fluid main'>
         <div className='row'>
+
           <div className='col-md-6 img '>
             <img src={logo} width="100%" height="100%" className='img-responsive' />
           </div>
+
           <div className='col-md-6 dv'>
-            <form className='form'>
+            <form>
               <h2 className='title'>Login Here </h2>
               <div className="form-group signin ">
                 <label for="email">Email address:</label>

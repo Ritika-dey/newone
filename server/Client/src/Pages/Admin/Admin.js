@@ -6,14 +6,14 @@ import ReqCourse from './ReqCourse'
 import ReqExam from './ReqExam'
 import ReqSessions from './ReqSessions'
 import AddBlog from './AddBlog'
-import AddCareer from './AddCareer' 
+import AddCareer from './AddCareer'
 import Queries from './Queries'
 import TutorReq from './TutorReq'
 import TutorApproved from './TutorApproved'
 import Dashboard from './Dashboard'
 import User from './User'
 import Notification from './Notification'
-import { DashboardOutlined, AssignmentIndOutlined, SubjectOutlined, VideoCallOutlined, BookOutlined, WorkOutline, PeopleOutline, QueryBuilderOutlined, AssignmentTurnedInOutlined, GroupAddOutlined, GroupOutlined , NotificationImportant} from '@material-ui/icons' 
+import { Menu, DashboardOutlined, AssignmentIndOutlined, SubjectOutlined, VideoCallOutlined, BookOutlined, WorkOutline, PeopleOutline, QueryBuilderOutlined, AssignmentTurnedInOutlined, GroupAddOutlined, GroupOutlined, NotificationImportant } from '@material-ui/icons'
 
 function Admin() {
     const [Dashb, setDashboard] = useState(false)
@@ -23,14 +23,14 @@ function Admin() {
     const [Sessions, setSessions] = useState(false)
     const [Blog, setAddBlog] = useState(false)
     const [Career, setAddCareer] = useState(false)
-    const [Querie, setQueries] = useState(false) 
+    const [Querie, setQueries] = useState(false)
     const [Trequest, setTrequest] = useState(false)
     const [TApproved, setTApproved] = useState(false)
     const [Users, setUsers] = useState(false)
     const [Notifications, setNotification] = useState(false)
 
     const changePage = (str) => {
-        if(str === "Dashboard"){
+        if (str === "Dashboard") {
             setDashboard(true)
             setAssignment(false)
             setCourse(false)
@@ -43,7 +43,7 @@ function Admin() {
             setTApproved(false)
             setUsers(false)
         }
-        else if(str === "Assignments"){
+        else if (str === "Assignments") {
             setDashboard(false)
             setAssignment(true)
             setCourse(false)
@@ -56,7 +56,7 @@ function Admin() {
             setTApproved(false)
             setUsers(false)
         }
-        else if(str === "Course Help"){
+        else if (str === "Course Help") {
             setDashboard(false)
             setAssignment(false)
             setCourse(true)
@@ -69,7 +69,7 @@ function Admin() {
             setTApproved(false)
             setUsers(false)
         }
-        else if(str === "Live Sessions"){
+        else if (str === "Live Sessions") {
             setDashboard(false)
             setAssignment(false)
             setCourse(false)
@@ -82,7 +82,7 @@ function Admin() {
             setTApproved(false)
             setUsers(false)
         }
-        else if(str === "Add Blog"){
+        else if (str === "Add Blog") {
             setDashboard(false)
             setAssignment(false)
             setCourse(false)
@@ -95,7 +95,7 @@ function Admin() {
             setTApproved(false)
             setUsers(false)
         }
-        else if(str === "Add Career"){
+        else if (str === "Add Career") {
             setDashboard(false)
             setAssignment(false)
             setCourse(false)
@@ -108,7 +108,7 @@ function Admin() {
             setTApproved(false)
             setUsers(false)
         }
-        else if(str === "Queries"){
+        else if (str === "Queries") {
             setDashboard(false)
             setAssignment(false)
             setCourse(false)
@@ -120,8 +120,8 @@ function Admin() {
             setTrequest(false)
             setTApproved(false)
             setUsers(false)
-        } 
-        else if(str === "Tutor Requests"){
+        }
+        else if (str === "Tutor Requests") {
             setDashboard(false)
             setAssignment(false)
             setCourse(false)
@@ -134,7 +134,7 @@ function Admin() {
             setTApproved(false)
             setUsers(false)
         }
-        else if(str === "Approved Tutors"){
+        else if (str === "Approved Tutors") {
             setDashboard(false)
             setAssignment(false)
             setCourse(false)
@@ -147,7 +147,7 @@ function Admin() {
             setTApproved(true)
             setUsers(false)
         }
-        else if(str === "Practice Exam"){
+        else if (str === "Practice Exam") {
             setDashboard(false)
             setAssignment(false)
             setCourse(false)
@@ -160,7 +160,7 @@ function Admin() {
             setTApproved(false)
             setUsers(false)
         }
-        else if(str === 'Notification'){
+        else if (str === 'Notification') {
             setDashboard(false)
             setAssignment(false)
             setCourse(false)
@@ -174,7 +174,7 @@ function Admin() {
             setUsers(false)
             setNotification(true)
         }
-        else{
+        else {
             setDashboard(false)
             setAssignment(false)
             setCourse(false)
@@ -192,59 +192,84 @@ function Admin() {
         <>
             <div className="admin__panel">
                 <div className="admin__panel__sidebar col-sm-2">
-                    <div className="list-group">
-                        {/* add user, icons */}
-                        <Link to="#" onClick={() => changePage('Dashboard')} className="list-group-item sidebar_item"><DashboardOutlined /> Dashboard</Link>
-                        <Link to="#" onClick={() => changePage('Assignments')} className="list-group-item sidebar_item"><AssignmentIndOutlined/> Requested Assignments</Link>
-                        <Link to="#" onClick={() => changePage('Course Help')} className="list-group-item sidebar_item"><SubjectOutlined /> Requested Course Help</Link>
-                        <Link to="#" onClick={() => changePage('Practice Exam')} className="list-group-item sidebar_item"><AssignmentTurnedInOutlined/> Requested Exams</Link>
-                        <Link to="#" onClick={() => changePage('Live Sessions')} className="list-group-item sidebar_item"><VideoCallOutlined /> Requested Live Session</Link>
-                        <Link to="#" onClick={() => changePage('Add Blog')} className="list-group-item sidebar_item"><BookOutlined/> Add Blog</Link>
-                        <Link to="#" onClick={() => changePage('Add Career')} className="list-group-item sidebar_item"><WorkOutline/> Add Career</Link>
-                        <Link to="#" onClick={() => changePage('Queries')} className="list-group-item sidebar_item"><QueryBuilderOutlined /> Queries</Link> 
-                        <Link to="#" onClick={() => changePage('User')} className="list-group-item sidebar_item"><PeopleOutline/> Customers</Link>
-                        <Link to="#" onClick={() => changePage('Tutor Requests')} className="list-group-item sidebar_item"><GroupAddOutlined/> Tutor Requests</Link>
-                        <Link to="#" onClick={() => changePage('Approved Tutors')} className="list-group-item sidebar_item"><GroupOutlined/> Approved Tutors</Link> 
-                        <Link to="#" onClick={() => changePage('Notification')} className="list-group-item sidebar_item"><NotificationImportant /> Notification</Link> 
-                    </div> 
+                    {
+                        window.innerWidth < 650 ?
+                            <>
+                                <button data-toggle="collapse" data-target="#myadminfilter">
+                                    <i className='fa fa-filter'></i>
+                                </button>
+                                <div className="list-group collapse" id='myadminfilter'>
+                                    {/* add user, icons */}
+                                    <Link to="#" onClick={() => changePage('Dashboard')} className="list-group-item sidebar_item"><DashboardOutlined /> Dashboard</Link>
+                                    <Link to="#" onClick={() => changePage('Assignments')} className="list-group-item sidebar_item"><AssignmentIndOutlined /> Requested Assignments</Link>
+                                    <Link to="#" onClick={() => changePage('Course Help')} className="list-group-item sidebar_item"><SubjectOutlined /> Requested Course Help</Link>
+                                    <Link to="#" onClick={() => changePage('Practice Exam')} className="list-group-item sidebar_item"><AssignmentTurnedInOutlined /> Requested Exams</Link>
+                                    <Link to="#" onClick={() => changePage('Live Sessions')} className="list-group-item sidebar_item"><VideoCallOutlined /> Requested Live Session</Link>
+                                    <Link to="#" onClick={() => changePage('Add Blog')} className="list-group-item sidebar_item"><BookOutlined /> Add Blog</Link>
+                                    <Link to="#" onClick={() => changePage('Add Career')} className="list-group-item sidebar_item"><WorkOutline /> Add Career</Link>
+                                    <Link to="#" onClick={() => changePage('Queries')} className="list-group-item sidebar_item"><QueryBuilderOutlined /> Queries</Link>
+                                    <Link to="#" onClick={() => changePage('User')} className="list-group-item sidebar_item"><PeopleOutline /> Customers</Link>
+                                    <Link to="#" onClick={() => changePage('Tutor Requests')} className="list-group-item sidebar_item"><GroupAddOutlined /> Tutor Requests</Link>
+                                    <Link to="#" onClick={() => changePage('Approved Tutors')} className="list-group-item sidebar_item"><GroupOutlined /> Approved Tutors</Link>
+                                    <Link to="#" onClick={() => changePage('Notification')} className="list-group-item sidebar_item"><NotificationImportant /> Notification</Link>
+                                </div>
+                            </>
+                            :
+                            <div className="list-group" id='myadminfilter'>
+                                {/* add user, icons */}
+                                <Link to="#" onClick={() => changePage('Dashboard')} className="list-group-item sidebar_item"><DashboardOutlined /> Dashboard</Link>
+                                <Link to="#" onClick={() => changePage('Assignments')} className="list-group-item sidebar_item"><AssignmentIndOutlined /> Requested Assignments</Link>
+                                <Link to="#" onClick={() => changePage('Course Help')} className="list-group-item sidebar_item"><SubjectOutlined /> Requested Course Help</Link>
+                                <Link to="#" onClick={() => changePage('Practice Exam')} className="list-group-item sidebar_item"><AssignmentTurnedInOutlined /> Requested Exams</Link>
+                                <Link to="#" onClick={() => changePage('Live Sessions')} className="list-group-item sidebar_item"><VideoCallOutlined /> Requested Live Session</Link>
+                                <Link to="#" onClick={() => changePage('Add Blog')} className="list-group-item sidebar_item"><BookOutlined /> Add Blog</Link>
+                                <Link to="#" onClick={() => changePage('Add Career')} className="list-group-item sidebar_item"><WorkOutline /> Add Career</Link>
+                                <Link to="#" onClick={() => changePage('Queries')} className="list-group-item sidebar_item"><QueryBuilderOutlined /> Queries</Link>
+                                <Link to="#" onClick={() => changePage('User')} className="list-group-item sidebar_item"><PeopleOutline /> Customers</Link>
+                                <Link to="#" onClick={() => changePage('Tutor Requests')} className="list-group-item sidebar_item"><GroupAddOutlined /> Tutor Requests</Link>
+                                <Link to="#" onClick={() => changePage('Approved Tutors')} className="list-group-item sidebar_item"><GroupOutlined /> Approved Tutors</Link>
+                                <Link to="#" onClick={() => changePage('Notification')} className="list-group-item sidebar_item"><NotificationImportant /> Notification</Link>
+                            </div>
+
+                    }
+
                 </div>
                 <div className="admin__panel__content col-sm-10">
                     {
-                        Assignment ? 
-                            <ReqAssignment /> 
-                            : 
-                            (Course ? 
-                                <ReqCourse /> 
-                                : 
-                                (Practice ? 
-                                    <ReqExam /> 
-                                    : 
-                                    (Sessions ? 
-                                        <ReqSessions /> 
+                        Assignment ?
+                            <ReqAssignment />
+                            :
+                            (Course ?
+                                <ReqCourse />
+                                :
+                                (Practice ?
+                                    <ReqExam />
+                                    :
+                                    (Sessions ?
+                                        <ReqSessions />
                                         :
                                         (Blog ?
                                             <AddBlog />
                                             :
                                             (Career ?
-                                                <AddCareer/>
-                                                :  
-                                                    (Querie ? 
-                                                        <Queries />
+                                                <AddCareer />
+                                                :
+                                                (Querie ?
+                                                    <Queries />
+                                                    :
+                                                    (Trequest ?
+                                                        <TutorReq />
                                                         :
-                                                        (Trequest ?
-                                                            <TutorReq /> 
+                                                        (TApproved ?
+                                                            <TutorApproved />
                                                             :
-                                                            (TApproved ?
-                                                                <TutorApproved />
+                                                            (Users ?
+                                                                <User />
                                                                 :
-                                                                (Users ? 
-                                                                    <User />
+                                                                (Notifications ?
+                                                                    <Notification />
                                                                     :
-                                                                    (Notifications ? 
-                                                                        <Notification />
-                                                                        :
-                                                                        <Dashboard />
-                                                                    )
+                                                                    <Dashboard />
                                                                 )
                                                             )
                                                         )
@@ -254,7 +279,8 @@ function Admin() {
                                         )
                                     )
                                 )
-                            
+                            )
+
                     }
                 </div>
             </div>

@@ -72,7 +72,7 @@ function Disscussion_filter(props) {
             <div className="discussion_feed  col-sm-8"> 
                 <div className="discussion__content container-fluid"> 
                     <div className="row">
-                        <h3 className="text-primary">{props.filtername} questions answers for you&nbsp;&nbsp; <Link to="/ask"><button type="button" class="btn btn-primary qu">Ask Question</button></Link></h3>
+                        <h3 className="text-primary">{props.filtername} questions answers for you&nbsp;&nbsp; <Link to="/ask"><button type="button" className="btn btn-primary qu">Ask Question</button></Link></h3>
 
                     </div>
                     {/* question field starts here */}

@@ -21,9 +21,9 @@ export default function Practice() {
     }
     return (
         <div>
-           <div class="form-group">
+           <div className="form-group">
   <label for="sel1">Select total no of questions:</label>
-  <select class="form-control" id="sel1"value={data}  onChange={(e) => setdata(e.target.value)} >
+  <select className="form-control" id="sel1"value={data}  onChange={(e) => setdata(e.target.value)} >
     <option value="10">10-20</option>
     <option value="20">20-30</option>
     <option value="30">30-40</option>

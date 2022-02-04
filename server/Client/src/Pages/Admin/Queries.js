@@ -22,8 +22,8 @@ function Queries() {
         <>
             <div className="queries container-fluid">
                 <h2>Recentle posted Queries</h2>
-                <div className="queries__table conainer">
-                    <table className="table table-striped table-responsive">
+                <div className="queries__table table-responsive conainer">
+                    <table className="table table-striped">
                         <thead>
                             <tr>
                                 <th>id</th>

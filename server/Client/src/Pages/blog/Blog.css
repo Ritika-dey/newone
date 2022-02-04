@@ -68,7 +68,13 @@
 
 
 /* blog row component */
-.blog__row, .blog__section__content{
+.blog__row{
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    background-color: rgb(248, 249, 250); 
+    margin: 10px;
+}
+.blog__section__content{
+    margin-top: 20px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     background-color: rgb(248, 249, 250); 
     margin: 10px;
@@ -342,8 +348,7 @@ margin: 1rem;
     .blog__row__blog h3{
         text-align: center;
     }
-    .blog__section__blog{
-        margin: 10px;
+    .blog__section__blog{ 
         padding: 10px;
-    }   
+    }    
 }

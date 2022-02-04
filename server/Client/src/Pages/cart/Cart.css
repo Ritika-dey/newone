@@ -3,6 +3,7 @@
     height: 100px;
     object-fit: contain;
     background: linear-gradient(60deg,white, #5b6b96, white )
+    
 }
 
 .cart__header__pill{
@@ -57,4 +58,10 @@
 
 .cart__item__list{
     padding: 10px;
+}
+
+@media(max-width:650px){
+    .cart__item__header{
+        justify-content: flex-start;
+    } 
 }

@@ -42,3 +42,16 @@
    display: flex;
    justify-content: space-between;
 }
+
+@media(max-width:650px){
+    .discussion__content{
+        padding: 0px;
+    }
+    .qu{
+        margin: 5px;
+    }
+    .discussion_tips{
+        width:90% ;
+        margin: auto;
+    }
+}

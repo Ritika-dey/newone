@@ -186,19 +186,19 @@ function Assignment_help() {
                      <div className="form-group">
              <label className="control-label " for="rating">Total Questions: &nbsp;&nbsp;&nbsp;&nbsp;  </label>
              
-              <label class="radio-inline">
+              <label className="radio-inline">
       <input type="radio" name="optradio" value="100 " onChange={changeprice}/>0-10
     </label>
-    <label class="radio-inline">
+    <label className="radio-inline">
       <input type="radio" name="optradio"  value="200" onChange={changeprice} />10-20
     </label>
-    <label class="radio-inline">
+    <label className="radio-inline">
       <input type="radio" name="optradio"  value="300" onChange={changeprice} />20-30
     </label>
-    <label class="radio-inline">
+    <label className="radio-inline">
       <input type="radio" name="optradio"  value="400" onChange={changeprice} />30-40
     </label>
-    <label class="radio-inline">
+    <label className="radio-inline">
       <input type="radio" name="optradio"  value="500" onChange={changeprice} />40-50
     </label>
              </div>

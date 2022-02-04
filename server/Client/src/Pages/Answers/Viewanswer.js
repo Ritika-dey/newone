@@ -28,7 +28,7 @@ const Viewanswer = (props) => {
         axios.get(`/viewanswer/${props.match.params.id}`).then(res => [
             SetData(res.data)
         ])
-        .catch(error => console.log(error));
+            .catch(error => console.log(error));
 
         async function getData1() {
             const res = await fetch("/getcategory");
@@ -89,44 +89,52 @@ const Viewanswer = (props) => {
                     </div> */}
                     <h4 className="text-primary"><strong>Filters by Subject</strong></h4>
                     <div className="list-group">
-                       
+
                         {
-                        Cat.map((i, index) => (
-                            <div key={index}><Link to="#" onClick={() => changeFilter(`${i.category}`)} className="list-group-item">{i.category}</Link></div>
-                        ))
+                            Cat.map((i, index) => (
+                                <div key={index}><Link to="#" onClick={() => changeFilter(`${i.category}`)} className="list-group-item">{i.category}</Link></div>
+                            ))
                         }
                     </div>
                 </div>
                 <div className="col-sm-10 cont">
-                {
-                    showFilter ? <Disscussion_filter hideFilter={hideFilter} filtername={Filter} /> :
-                    <div className="question col-sm">
-                        <h1 className="queheading">Question: {data.question}</h1>
+                    {
+                        showFilter ? <Disscussion_filter hideFilter={hideFilter} filtername={Filter} /> :
+                            <div className="question col-sm">
+                                <h1 className="queheading">Question: {data.question}</h1>
+                                <div className="image">
+                                    {/* <img className="img-responsive img-rounded" src={`/uploads/${data.queimg}`}></img> */}
+                                    {/* image is not getting fetched from server thusmage for now,, check this what is happening */}
+                                    <img
+                                        className="img-responsive img-rounded"
+                                        src='https://media.istockphoto.com/photos/crash-tes using dummy ih-dummy-in-car-picture-id1209793467?b=1&k=20&m=1209793467&s=170667a&w=0&h=0aacX0EoFndZv-w-j5BQN9iV48o3mZzfgpbsjWQ4iLo='
+                                        alt='blog banner' />
+                                </div>
+                                <div className="con row">
+                                    {/* <div className="discussion__like__dislike col-xs-2">
+                                        <div align="center"><i className="fa fa-caret-up" aria-hidden="true" style={{ fontWeight: "bold", fontSize: "24px" }}></i></div>
+                                        <div className='discussion__like__count' align="center" style={{ fontWeight: "bold" }}>5</div>
+                                        <div align="center"><i className='fa fa-caret-down' aria-hidden="true" style={{ fontWeight: "bold", fontSize: "24px" }}></i></div>
+                                    </div> */}
+                                    <h4 className="col text-success"><i className="fa fa-check-circle-o" onClick={() => { likePost(data._id) }}></i> {data && data.likes.length}</h4>
+                                    <h4 className="col text-danger">On: {data.date}</h4>
+                                </div>
+                                <div className="con row">
+                                    <h4 className="col text-primary">By: {data.name}</h4>
+                                    <h4 className="col text-warning">Subject: {data.subject}</h4>
+                                </div>
 
-
-                        <div className="image">
-                            <img src={`/uploads/${data.queimg}`} className=""></img>
-                        </div>
-                        <div className="con row">
-                            <div className="discussion__like__dislike col-xs-2">
-                            <div align="center"><i className="fa fa-caret-up" aria-hidden="true" style={{ fontWeight: "bold", fontSize: "24px" }}></i></div>
-                            <div className='discussion__like__count' align="center" style={{ fontWeight: "bold" }}>5</div>
-                            <div align="center"><i className='fa fa-caret-down' aria-hidden="true" style={{ fontWeight: "bold", fontSize: "24px" }}></i></div>
-                        </div>
-                            {/* <h4 className=" text-success"><i className="fa fa-check-circle-o" onClick={() => { likePost(data._id) }}></i>{data && data.likes.length} Likes</h4> */}
-                            <h4 className=" text-primary">Postedby: {data.name}</h4>
-                            <h4 className=" text-danger">Posted On: {data.date}</h4>
-                            <h4 className=" text-warning">Subject: {data.subject}</h4>
-
-                        </div>
-
-                        <h5 className="answer"><strong>Answer:</strong> {data.answer}</h5>
-
-                        <div className="image">
-                            <img src={`/uploads/${data.articleImage}`} className=""></img>
-                        </div>
-                    </div>
-                    }                   
+                                <h5 className="answer"><strong>Answer:</strong> {data.answer}</h5>
+                                <div className="image">
+                                    {/* <img src={`/uploads/${data.articleImage}`} className="img-responsive img-rounded"></img> */}
+                                    {/* image is not getting fetched from server thusmage for now,, check this what is happening */}
+                                    <img
+                                        className="img-responsive img-rounded"
+                                        src='https://media.istockphoto.com/photos/crash-tes using dummy ih-dummy-in-car-picture-id1209793467?b=1&k=20&m=1209793467&s=170667a&w=0&h=0aacX0EoFndZv-w-j5BQN9iV48o3mZzfgpbsjWQ4iLo='
+                                        alt='blog banner' />
+                                </div>
+                            </div>
+                    }
                 </div>
 
             </div>

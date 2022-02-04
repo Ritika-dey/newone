@@ -1,25 +1,24 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react'
 import axios from 'axios'
 import './Home.css'
 import image from './img.png'
 import Services from './Services/Services'
 import Slide from 'react-reveal/Slide'
 import Fade from 'react-reveal/Fade'
-import { Link } from 'react-router-dom' 
+import { Link } from 'react-router-dom'
 
-function Home() { 
+function Home() {
   const [Data, setData] = useState(null);
-  const [search,setSearch] =useState('');
+  const [search, setSearch] = useState('');
 
-  const searchRecords = () =>
-     {
-         axios.get(`/searchanswer/${search}`)
-         .then(response => {
-            
-           setData(response.data);
-         });
-          
-     }
+  const searchRecords = () => {
+    axios.get(`/searchanswer/${search}`)
+      .then(response => {
+
+        setData(response.data);
+      });
+
+  }
   return (
     <>
       <div className="container-fluid home">
@@ -57,7 +56,7 @@ function Home() {
                 type="text"
                 className="form-control inp"
                 placeholder="Find Homework Solution"
-                onKeyUp={searchRecords} onChange={(e)=>setSearch(e.target.value)}
+                onKeyUp={searchRecords} onChange={(e) => setSearch(e.target.value)}
               />
 
               <div className="input-group-btn">
@@ -69,76 +68,66 @@ function Home() {
           </form>
         </div>
         {/* form data  */}
-        {Data? Data && (
-                    <>
+        {Data ? Data && (
+          <>
+            {/* loop over the Data */}
+            {Data.map((i, index) => (
+              <div className="discussion__ques container " key={index}>
+                <div className="discussion__que  ">
+                  <h4 className="discussion__que__title">Question:-{i.question}</h4>
+                  <h4 className="discussion__que__title">Answer:-{i.answer.slice(0, 85)}...<Link to={"/viewanswer/" + i._id}>Read More</Link></h4>
+                  <div className="discussion__que__anscnt "><p className="new">Subject: {i.subject}</p></div>
 
-                        {/* loop over the Data */}
-                        {Data.map((i, index) => (
-                            <div className="discussion__ques container " key={index}>
-                         
-        
-                         
-                         <div className="discussion__que  ">
-                             <h4 className="discussion__que__title">Question:-{i.question}</h4>
-                             <h4 className="discussion__que__title">Answer:-{i.answer.slice(0,85)}...<Link to={"/viewanswer/" +  i._id}>Read More</Link></h4>
-                             <div className="discussion__que__anscnt "><p className="new">Subject: {i.subject}</p></div>
-                            
-                            
-                        
-                            
-                             {/* <img className="img-responsive img-rounded"
+                  {/* <img className="img-responsive img-rounded"
                               src={`/uploads/${i.articleImage}`} 
                               placeholder="ques banner" alt="..."/>
                              */}
-                             
-                         </div>
-        
-                        
-                         
-                         <hr></hr>
-                         <hr></hr>
-                     </div>
-                        ))}
 
-                   </>
-                ):<>
-                
-                <Services />{' '}
-        <Fade>
-          <div className="container-fluid lesson_details">
-            <h1>Online lessons. Just for you</h1>
-            <h2>Excel from the comfort of your home or on the go.</h2>
-            <div className="row">
-              <div className="lesson_details_text col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                <h3>
-                  <i className="fa fa-check-square"></i>Meet with experts of
-                  your own choice, anywhere in the country, online.
-                </h3>
-                <h3>
-                  <i className="fa fa-check-square"></i>Save time and easily fit
-                  lessons into your schedule.
-                </h3>
-                <h3>
-                  <i className="fa fa-check-square"></i>Collaborate with online
-                  features built for any skill or subject.
-                </h3>
+                </div>
+                <hr></hr>
+                <hr></hr>
               </div>
-              <div className="lesson_details_image col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                <img alt="" className="img-responsive" src={image} />
+            ))}
+
+          </>
+        ) : <>
+
+          <Services />{' '}
+          <Fade>
+            <div className="container-fluid lesson_details">
+              <h1>Online lessons. Just for you</h1>
+              <h2>Excel from the comfort of your home or on the go.</h2>
+              <div className="row">
+                <div className="lesson_details_text col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                  <h4>
+                    <i className="fa fa-check-square"></i> Meet with experts of
+                    your own choice, anywhere in the country, online.
+                  </h4>
+                  <h4>
+                    <i className="fa fa-check-square"></i> Save time and easily fit
+                    lessons into your schedule.
+                  </h4>
+                  <h4>
+                    <i className="fa fa-check-square"></i> Collaborate with online
+                    features built for any skill or subject.
+                  </h4>
+                </div>
+                <div className="lesson_details_image col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                  <img alt="" className="img-responsive" src={image} />
+                </div>
               </div>
             </div>
-          </div>
-        </Fade> 
-                
-                </>}
+          </Fade>
+
+        </>}
         {/* home footer start */}
         <div className="home__footer">
-          <div className="row">
+          <div className="row" style={{ margin: "0px" }}>
             <div className="home__Contact__info col-lg-4 col-md-4 col-sm-12 col-xs-12">
               <h2 className="contact__info__title">Contact Info</h2>
-              
+
               <div className="contact__info__content">
-                <hr/>
+                <hr />
                 <p className="contact__info__address"><i className="fa fa-map-marker" aria-hidden="true"></i>&nbsp;ADDRESS : C-4 Behind MA Plazaz , New Delhi</p>
                 <p className="contact__info__telephone"><i className="fa fa-phone" aria-hidden="true"></i>&nbsp;PHONE: +91 8299729830</p>
                 <p className="contact__info__whatsapp"><i className="fa fa-whatsapp"></i>&nbsp;WHATSAPP: +91 8299729830</p>
@@ -146,7 +135,7 @@ function Home() {
             </div>
             <div className="home__useful__link col-lg-8 col-md-8 col-sm-12 col-xs-12">
               <h2 className="useful__links__title">Useful Links</h2>
-              <hr style={{borderColor:"#153280"}}/>
+              <hr style={{ borderColor: "#153280" }} />
 
               <div className="useful__links__content">
                 <div className="home__footer__courses col-lg-4 col-md-4 col-sm-4 col-xs-12">

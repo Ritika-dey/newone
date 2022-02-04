@@ -66,8 +66,8 @@ function Blog() {
                                             <img
                                                 className="blog-img"
                                                 src={`/Blogs/${i.articleImage}`}
-                                                placeholder="blog banner" alt="..." >
-                                            </img>
+                                                alt="blog banner" >
+                                            </img> 
                                             <h4>{i.title}</h4>
                                             <div className="blog__continue">
                                                 <Link to={"/viewblog/" + i._id}><button className="btn btn-default">Continue reading </button></Link>

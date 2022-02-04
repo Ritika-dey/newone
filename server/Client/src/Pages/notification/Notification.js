@@ -36,7 +36,8 @@ function Notification() {
                         Data.map((i, index) =>
                         // bg color for this div is blue only for unread buttons
                             <div key={index}>
-                            {i.read=="Pending"?<>
+                            { i.read=="Pending" ?
+                            <>
                             <div className='notification col-sm-11'  style={{ backgroundColor: "rgb(202, 225, 233)" }} >
                                 <div className='notification__body col-xs-11'>
                                     <p className='notification__time'>{i.date}</p>
@@ -44,7 +45,9 @@ function Notification() {
                                   <Link to={"/read/" + i._id} onClick={read(i._id)} className='text-right'>Read More</Link>
                                 </div>
                             </div>
-                            </>:<>
+                            </>
+                            :
+                            <>
                             <div className='notification col-sm-11' >
                                 <div className='notification__body col-xs-11'>
                                     <p className='notification__time'>{i.date}</p>
@@ -52,8 +55,9 @@ function Notification() {
                                   <Link to={"/read/" + i._id} onClick={read(i._id)} className='text-right'>Read More</Link>
                                 </div>
                             </div>
-                            </>}
-                            </div>
+                            </>
+                            }
+                            </div> 
                         )}
 
                     </>

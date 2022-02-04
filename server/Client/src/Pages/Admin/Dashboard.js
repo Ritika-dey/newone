@@ -92,14 +92,7 @@ function Dashboard() {
                             <h3><b>Pending Reviews</b></h3> 
                             {/* loop over pending review div */}
                           <Reviews/>
-
-
-                            
-
-
-
-
-                            
+ 
                         </div>
                         <div className="col-sm-5 new__customers">
                             <h3><b>New Customers</b></h3>

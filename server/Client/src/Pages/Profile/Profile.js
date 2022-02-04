@@ -7,7 +7,7 @@ import UserEdu from './UserEdu'
 import UserQues from './UserQues'
 import axios from 'axios'
 function Profile() {
-  const [not , setnot]=useState(null)
+  const [not, setnot] = useState(null)
   const [currentItemId, setcurrentItemId] = useState(null);
   const [ShowBasics, setShowBasics] = useState(false)
   const [ShowAns, setShowAns] = useState(false)
@@ -17,14 +17,14 @@ function Profile() {
   const history = useHistory()
   const [userData, setUserData] = useState({});
 
-// update variables
-const [name , setname]=useState("")
-const [email , setemail]=useState("")
-const [dob , setdob]=useState("")
-const [phone , setphone]=useState("")
-const [specialization, setspecialization]=useState("")
-const [profession , setprofession]=useState("")
-const [university , setuniversity]=useState("")
+  // update variables
+  const [name, setname] = useState("")
+  const [email, setemail] = useState("")
+  const [dob, setdob] = useState("")
+  const [phone, setphone] = useState("")
+  const [specialization, setspecialization] = useState("")
+  const [profession, setprofession] = useState("")
+  const [university, setuniversity] = useState("")
 
 
   //  logic for fetching user from database
@@ -58,15 +58,15 @@ const [university , setuniversity]=useState("")
 
     // we will use async/await to fetch this data
     async function getData() {
-        const res1 = await fetch("/getnot");
-        const data1 = await res1.json();
-        // store the data into our Data variable
-        setnot(data1);
+      const res1 = await fetch("/getnot");
+      const data1 = await res1.json();
+      // store the data into our Data variable
+      setnot(data1);
     }
-  },[])
+  }, [])
 
   // get not
-  
+
   const changeBasics = () => {
     setShowBasics(true)
     setShowAns(false)
@@ -94,28 +94,28 @@ const [university , setuniversity]=useState("")
     setShowEdu(false)
     setShowQues(true)
   }
-  const update=(currentItemId)=>{
-console.log(currentItemId)
-const articles = {
-  name , email , phone , dob ,specialization, university , profession
-}
-setname("");
-setemail("");
-setuniversity("");
-setprofession("");
-setphone("");
-setspecialization("");
-setdob("");
+  const update = (currentItemId) => {
+    console.log(currentItemId)
+    const articles = {
+      name, email, phone, dob, specialization, university, profession
+    }
+    setname("");
+    setemail("");
+    setuniversity("");
+    setprofession("");
+    setphone("");
+    setspecialization("");
+    setdob("");
 
-axios.put(`/updateuserdetails/${currentItemId}`, articles).then
-  (
-      res =>
+    axios.put(`/updateuserdetails/${currentItemId}`, articles).then
+      (
+        res =>
           window.alert(` details updated`, res.data),
 
-  )
-  .catch(err => {
-      console.log(err)
-  })
+      )
+      .catch(err => {
+        console.log(err)
+      })
 
   }
   return (
@@ -130,14 +130,31 @@ axios.put(`/updateuserdetails/${currentItemId}`, articles).then
             <h3><strong>{userData.name}</strong></h3>
           </div>
           <div className="profile__nav__list">
-            <div className="list-group">
-              <Link to="#" className="list-group-item" onClick={() => changeBasics()}>Basics</Link>
-              <Link to="#" className="list-group-item" onClick={() => changeEdu()}>Education</Link>
-              <Link to="#" className="list-group-item" onClick={() => changeAns()}>Answers</Link>
-              <Link to="#" className="list-group-item" onClick={() => changeQues()}>Questions</Link>
-              {/* change the below url for ask a question don't change above urls*/}
-              <Link to="/ask" className="list-group-item">Ask Questions</Link>
-            </div>
+            {
+              window.innerWidth < 650 ?
+                <>
+                  <button data-toggle="collapse" data-target="#myprofilefilter">
+                    <i className='fa fa-filter'></i>
+                  </button>
+                  <div className="list-group collapse" id='myprofilefilter'>
+                    <Link to="#" className="list-group-item" onClick={() => changeBasics()}>Basics</Link>
+                    <Link to="#" className="list-group-item" onClick={() => changeEdu()}>Education</Link>
+                    <Link to="#" className="list-group-item" onClick={() => changeAns()}>Answers</Link>
+                    <Link to="#" className="list-group-item" onClick={() => changeQues()}>Questions</Link>
+                    {/* change the below url for ask a question don't change above urls*/}
+                    <Link to="/ask" className="list-group-item">Ask Questions</Link>
+                  </div>
+                </>
+                :
+                <div className="list-group">
+                  <Link to="#" className="list-group-item" onClick={() => changeBasics()}>Basics</Link>
+                  <Link to="#" className="list-group-item" onClick={() => changeEdu()}>Education</Link>
+                  <Link to="#" className="list-group-item" onClick={() => changeAns()}>Answers</Link>
+                  <Link to="#" className="list-group-item" onClick={() => changeQues()}>Questions</Link>
+                  {/* change the below url for ask a question don't change above urls*/}
+                  <Link to="/ask" className="list-group-item">Ask Questions</Link>
+                </div>
+            }
           </div>
 
         </div>
@@ -148,7 +165,7 @@ axios.put(`/updateuserdetails/${currentItemId}`, articles).then
           <div className='profile__shortcut__buttons'>
             <button title='Edit profile' className="btn btn-info profile__shortcut__btn" data-toggle="modal" data-target="#profileModal" onClick={() => setcurrentItemId(`${userData._id}`)}><i className="fa fa-edit"></i></button>
             <button title='Cart' onClick={() => { history.push('/cart') }} className="btn btn-info profile__shortcut__btn"><i className='fa fa-shopping-cart'></i></button>
-            <button title='Notifications' onClick={() => { history.push('/notification') }} className="btn btn-info profile__shortcut__btn"><i className='fa fa-bell'></i><span className='badge'>{not ?<>{not && not.length}</>:<>0</>}</span></button>
+            <button title='Notifications' onClick={() => { history.push('/notification') }} className="btn btn-info profile__shortcut__btn"><i className='fa fa-bell'></i><span className='badge'>{not ? <>{not && not.length}</> : <>0</>}</span></button>
             <button title='My Purchases' onClick={() => { history.push('/purchases') }} className="btn btn-info profile__shortcut__btn"><i className='fa fa-list-alt'></i></button>
           </div>
 
@@ -156,7 +173,7 @@ axios.put(`/updateuserdetails/${currentItemId}`, articles).then
           {/* modal content */}
           <div id="profileModal" className="modal fade" role="dialog">
             <div className="modal-dialog">
-             
+
               {/* <!-- Modal content--> */}
               <div className="modal-content" style={{ backgroundColor: "#153280", color: "white" }}>
                 <div className="modal-header" style={{ backgroundColor: "white", color: "#153280", fontWeight: "bold" }}>
@@ -178,8 +195,8 @@ axios.put(`/updateuserdetails/${currentItemId}`, articles).then
                   <div className="form-group">
                     <label htmlFor="email">Email:</label>
                     <input
-                    value={email}
-                    onChange={(e) => setemail(e.target.value)}
+                      value={email}
+                      onChange={(e) => setemail(e.target.value)}
                       type="email"
                       name="email"
                       className="form-control"
@@ -211,8 +228,8 @@ axios.put(`/updateuserdetails/${currentItemId}`, articles).then
                   <div className="form-group">
                     <label htmlFor="course">profession:</label>
                     <input
-                    value={profession}
-                    onChange={(e) => setprofession(e.target.value)}
+                      value={profession}
+                      onChange={(e) => setprofession(e.target.value)}
                       type="text"
                       name="course"
                       className="form-control"
@@ -242,7 +259,7 @@ axios.put(`/updateuserdetails/${currentItemId}`, articles).then
                   </div>
 
 
-                  <button onClick={()=>update(currentItemId)} className="btn btn-default">Update</button>
+                  <button onClick={() => update(currentItemId)} className="btn btn-default">Update</button>
                 </div>
               </div>
             </div>

@@ -136,3 +136,9 @@ font-weight: bold;
 .profile__edit form .form-group{
  margin-top: 15px;
 }
+
+@media(max-width:650px){
+  .profile__shortcut__buttons{
+    margin-bottom: 10px;
+  }
+}
